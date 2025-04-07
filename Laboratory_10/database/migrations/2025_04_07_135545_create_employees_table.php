@@ -23,6 +23,10 @@ return new class extends Migration
             $table->unsignedBigInteger("manager_id");
             $table->unsignedBigInteger("department_id");
 
+            $table->foreign('job_id')->references('id')->on('jobs');
+            $table->foreign('manager_id')->references('id')->on('employees');
+            $table->foreign('department_id')->references('id')->on('departments');
+
             $table->timestamps();
         });
     }

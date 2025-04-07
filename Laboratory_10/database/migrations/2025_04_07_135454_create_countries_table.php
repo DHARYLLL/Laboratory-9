@@ -16,6 +16,7 @@ return new class extends Migration
             $table->string("country_name");
             $table->unsignedBigInteger("region_id");
 
+            $table->foreign('region_id')->references('id')->on('regions');
             $table->timestamps();
         });
     }

@@ -17,7 +17,8 @@ return new class extends Migration
             $table->string("last_name");
             $table->string("relationship");
             $table->unsignedBigInteger("employee_id");
-            
+
+            $table->foreign('employee_id')->references('id')->on('employees');
             $table->timestamps();
         });
     }
